@@ -8,7 +8,7 @@ interface SectionProps {
 
 const Section: React.FC<SectionProps> = ({ children, className = '', id = '' }) => {
     return (
-        <section id={id} className={`container mx-auto ${className}`}>
+        <section id={id} className={`container px-2 mx-auto ${className}`}>
             {children}
         </section>
     );

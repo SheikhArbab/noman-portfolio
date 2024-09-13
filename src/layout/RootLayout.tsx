@@ -6,7 +6,7 @@ const RootLayout = () => {
     return (
         <>
             <C.Header />
-            <main className="min-h-screen w-full pt-20 text-4xl tracking-wider leading-relaxed bg-red-500">
+            <main className="min-h-screen w-full pt-28 text-4xl tracking-wider leading-relaxed">
                 <Outlet />
             </main>
             <C.Footer />
