@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import * as C from "@/components/index";
 
 const About: React.FC = () => {
     return (
-        <div>About</div>
+        <C.Section >about</C.Section>
     )
 }
 

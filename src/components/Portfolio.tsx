@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import * as C from "@/components/index";
 
 const Portfolio: React.FC = () => {
     return (
-        <div>Portfolio</div>
+        <C.Section >Portfolio</C.Section>
     )
 }
 
