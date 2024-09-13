@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import * as C from "@/components/index";
 
 const Contact: React.FC = () => {
     return (
-        <div>Contact</div>
+        <C.Section >Contact</C.Section>
     )
 }
 
