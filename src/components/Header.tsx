@@ -54,7 +54,7 @@ export default function Header() {
                     </ul>
                 </nav>
                 <a href="#contact" className="hidden md:block">
-                    <C.Button title="let's talk" />
+                    <C.Button>let's talk</C.Button>
                 </a>
                 {/* mobile nav start */}
                 <label onChange={() => setIsChecked(!isChecked)} className="hamburger md:hidden">

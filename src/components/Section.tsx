@@ -6,12 +6,11 @@ interface SectionProps {
     id?: string;
 }
 
-const Section: React.FC<SectionProps> = ({ children, className = '', id = '' }) => {
-    return (
-        <section id={id} className={`container px-2 mx-auto ${className}`}>
-            {children}
-        </section>
-    );
-}
+const Section: React.FC<SectionProps> = ({ children, className = '', id = '' }) => <>
+    <section id={id} className={`container px-2 mx-auto ${className}`}>
+        {children}
+    </section>
+    <hr className='border-0  border-b-2 border-black/90' />
+</>
 
 export default Section;
