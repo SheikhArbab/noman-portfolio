@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
             }
         ];
     return (
-        <C.Section className='py-8 md:py-20' id=''>
+        <C.Section className='py-8 md:py-20'>
             <h1 className='font-semibold text-6xl md:text-9xl ' >
                 Numan Hussain
                 <br />
