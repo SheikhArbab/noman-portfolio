@@ -1,34 +1,10 @@
 import React from 'react';
 import CountUp from 'react-countup';
 import * as C from "@/components/index";
-import { FaArrowDownLong, FaBehance, FaDribbble, FaLinkedin } from 'react-icons/fa6';
-import { IconType } from 'react-icons';
+import G from "@/constants/index";
+import { FaArrowDownLong } from 'react-icons/fa6';
 
 const Hero: React.FC = () => {
-
-    const currentYear = new Date().getFullYear();
-
-    const links: {
-        Icon: IconType;
-        url: string;
-        title: string
-    }[] = [
-            {
-                Icon: FaDribbble,
-                title: "DRIBBLE",
-                url: "#"
-            },
-            {
-                Icon: FaBehance,
-                title: "Behance",
-                url: "#"
-            },
-            {
-                Icon: FaLinkedin,
-                title: "Linkedin",
-                url: "#"
-            }
-        ];
     return (
         <C.Section className='py-8 md:py-20'>
             <h1 className='font-semibold text-6xl md:text-9xl ' >
@@ -68,7 +44,7 @@ const Hero: React.FC = () => {
                 <div className='flex flex-wrap items-center  gap-8' >
                     <p className='text-xs' >
                         &copy;
-                        {currentYear}
+                        {G.currentYear}
                     </p>
                     <a href="#skills">
                         <C.Button className='bg-transparent text-xs' >
@@ -77,7 +53,7 @@ const Hero: React.FC = () => {
                         </C.Button>
                     </a>
                 </div>
-                <ul className='flex flex-wrap items-center gap-7' >{links.map(v => <li key={v.title}>
+                <ul className='flex flex-wrap items-center gap-7' >{G.socialLinks.map(v => <li key={v.title}>
                     <a href={v.url} className='flex items-center justify-center text-xl font-semibold gap-4' >
                         <v.Icon />
                         <p>{v.title}</p>

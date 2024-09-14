@@ -1,19 +1,9 @@
 import React from 'react';
 import ProgressBar from "@ramonak/react-progress-bar";
 import * as C from "@/components/index";
+import G from "@/constants/index";
 
 const Skills: React.FC = () => {
-    const skills: {
-        title: string;
-        count: number;
-    }[] = [
-            { title: "Figma", count: 93 },
-            { title: "Adobe XD", count: 96 },
-            { title: "Adobe Illustrator", count: 94 },
-            { title: "Adobe Photoshop", count: 92 },
-            { title: "Wondershare Filmora", count: 93 },
-            { title: "Adobe Premier Pro", count: 9 }
-        ];
     return (
         <C.Section
             className='py-8 md:py-20'
@@ -30,7 +20,7 @@ const Skills: React.FC = () => {
                     </p>
                 </div>
                 <div className='flex-1 space-y-20 font-semibold p-5'>
-                    {skills.map(v => (
+                    {G.skillsData.map(v => (
                         <div key={v.title}>
                             <p className='mb-2 text-sm md:text-2xl'>{v.title}</p>
                             <div className='relative'>

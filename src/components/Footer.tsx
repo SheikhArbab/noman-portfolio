@@ -1,4 +1,5 @@
 import React from 'react';
+import G from "@/constants/index";
 
 const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
     <div className="mx-auto container px-2 py-20" >
@@ -38,7 +39,7 @@ const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
                     </a>
                 </li>
             </ul>
-            <p className="text-white text-xs" >COPYRIGHT &copy; Numan Hussain {new Date().getFullYear()}. ALL RIGHTS RESERVED.</p>
+            <p className="text-white text-xs" >COPYRIGHT &copy; Numan Hussain {G.currentYear}. ALL RIGHTS RESERVED.</p>
         </div>
     </div>
 </footer>
