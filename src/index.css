@@ -138,6 +138,7 @@ html {
   scroll-behavior: smooth;
 }
 
+
 ::selection {
   background-color: rgba(0, 0, 0, 0.822);
   color: white;
