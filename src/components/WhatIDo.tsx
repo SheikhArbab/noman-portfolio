@@ -5,7 +5,7 @@ import { LuPencil } from 'react-icons/lu';
 import { SiMaterialdesignicons } from 'react-icons/si';
 import { CiMobile3 } from 'react-icons/ci';
 import { CgWebsite } from 'react-icons/cg';
-import { FaRegLightbulb } from 'react-icons/fa6';
+import { FaArrowRightLong, FaRegLightbulb } from 'react-icons/fa6';
 
 const WhatIDo: React.FC = () => {
 
@@ -14,7 +14,6 @@ const WhatIDo: React.FC = () => {
         { title: "UX/UI Design", Icon: SiMaterialdesignicons },
         { title: "Mobile App Design", Icon: CiMobile3 },
         { title: "Website Design", Icon: CgWebsite },
-        { title: "Brand Design", Icon: FaRegLightbulb },
         { title: "Brand Design", Icon: FaRegLightbulb }
     ]
 
@@ -30,7 +29,15 @@ const WhatIDo: React.FC = () => {
                     <v.Icon size={50} className='group-hover:-translate-y-10 group-hover:opacity-0 duration-500 transition-all' />
                     <h1 className='capitalize font-semibold text-sm md:text-2xl' > {v.title}</h1>
                 </li>)}
-                <li></li>
+                <li className='  h-40 w-full lg:w-[25rem] p-8 flex flex-col items-start gap-4 duration-300 transition-all
+                    group overflow-hidden   bg-gray-300' >
+                    <h6 className='text-xs md:text-2xl font-semibold' >Let's create something amazing together!</h6>
+                    <a href="#contact">
+                        <C.Button className='text-xs sm:text-sm' >
+                            contact now <FaArrowRightLong />
+                        </C.Button>
+                    </a>
+                </li>
             </ul>
         </C.Section>
     )

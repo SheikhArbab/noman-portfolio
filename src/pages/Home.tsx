@@ -6,8 +6,8 @@ export default function Home() {
             <C.Hero />
             <C.About />
             <C.WhatIDo />
-            {/* <C.Skills />
-            <C.Experience />
+            <C.Skills />
+            {/* <C.Experience />
             <C.Portfolio />
             <C.Testimonial />
             <C.Contact /> */}
