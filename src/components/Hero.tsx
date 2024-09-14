@@ -30,7 +30,7 @@ const Hero: React.FC = () => {
             }
         ];
     return (
-        <C.Section className='py-8 md:py-20' >
+        <C.Section className='py-8 md:py-20' id=''>
             <h1 className='font-semibold text-6xl md:text-9xl ' >
                 Numan Hussain
                 <br />
@@ -70,7 +70,7 @@ const Hero: React.FC = () => {
                         &copy;
                         {currentYear}
                     </p>
-                    <a href="#skill">
+                    <a href="#skills">
                         <C.Button className='bg-transparent text-xs' >
                             Scroll down
                             <FaArrowDownLong />

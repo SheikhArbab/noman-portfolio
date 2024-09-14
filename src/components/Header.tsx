@@ -11,6 +11,7 @@ export default function Header() {
         { title: 'Testimonials', url: '#testimonials' },
     ];
 
+    const [activeSection, setActiveSection] = useState<string>('');  // To track the active section
     const [lastScrollY, setLastScrollY] = useState<number>(0);
     const [isScrolled, setIsScrolled] = useState<boolean>(false);
     const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
@@ -36,6 +37,40 @@ export default function Header() {
         };
     }, [lastScrollY]);
 
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.2,
+        };
+
+        const callback = (entries: IntersectionObserverEntry[]) => {
+            let activeSectionId = '';
+
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.getAttribute('id');
+                    if (sectionId) {
+                        activeSectionId = sectionId;
+                    }
+                }
+            });
+
+            setActiveSection(activeSectionId);
+        };
+
+        const observer = new IntersectionObserver(callback, options);
+
+        links.forEach((link) => {
+            const sectionElement = document.querySelector(link.url);
+            if (sectionElement) observer.observe(sectionElement);
+        });
+
+        return () => {
+            observer.disconnect();
+        };
+    }, [links]);
+
     return (
         <header className={`bg-white inset-x-0 top-0 z-50 transition-transform duration-300 ${isScrolled ? 'fixed shadow-md' : ''} ${isScrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-8">
@@ -45,8 +80,8 @@ export default function Header() {
                 <nav>
                     <ul className="hidden md:flex flex-wrap items-center space-x-10">
                         {links.map((link) => (
-                            <li key={link.title} className="relative h-fit w-fit before:absolute before:w-[120%] before:h-[0.20rem] before:rounded-full before:bg-black/80 before:-translate-x-1/2 before:left-1/2  before:-bottom-2 before:opacity-0 hover:before:opacity-100 before:duration-300 before:transition-all">
-                                <a href={link.url} className="capitalize text-black/80 font-semibold">
+                            <li key={link.title} className={`relative h-fit w-fit before:absolute before:w-[120%] before:h-[0.20rem] before:rounded-full before:bg-black/80 before:-translate-x-1/2 before:left-1/2 before:-bottom-2 ${activeSection === link.url.substring(1) ? 'before:opacity-100' : 'before:opacity-0'} before:duration-300 before:transition-all`}>
+                                <a href={link.url} className={`capitalize text-black/80 font-semibold ${activeSection === link.url.substring(1) ? 'text-black' : ''}`}>
                                     {link.title}
                                 </a>
                             </li>
@@ -71,8 +106,8 @@ export default function Header() {
             <nav className={`duration-300 transition-all overflow-hidden w-full ${isChecked ? "max-h-96" : "max-h-0"}`}>
                 <ul className="bg-white py-8 flex flex-col gap-6 px-4">
                     {links.map((link) => (
-                        <li key={link.title} className="relative h-fit w-fit before:absolute before:w-full before:h-[0.20rem] before:rounded-full before:bg-black/80  before:-bottom-2 before:opacity-0 hover:before:opacity-100 before:duration-300 before:transition-all">
-                            <a href={link.url} className="capitalize text-black/80 font-bold text-xl">
+                        <li key={link.title} className={`relative h-fit w-fit before:absolute before:w-full before:h-[0.20rem] before:rounded-full before:bg-black/80 before:-bottom-2 ${activeSection === link.url.substring(1) ? 'before:opacity-100' : 'before:opacity-0'} before:duration-300 before:transition-all`}>
+                            <a href={link.url} className={`capitalize text-black/80 font-bold text-xl ${activeSection === link.url.substring(1) ? 'text-black' : ''}`}>
                                 {link.title}
                             </a>
                         </li>
