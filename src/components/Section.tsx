@@ -1,4 +1,4 @@
-import { ReactNode, ForwardedRef, forwardRef } from 'react';
+import React, { ReactNode } from 'react';
 
 interface SectionProps {
     children: ReactNode;
@@ -6,12 +6,11 @@ interface SectionProps {
     id?: string;
 }
 
-const Section = forwardRef<HTMLDivElement, SectionProps>(({ children, className = '', id = '' }, ref: ForwardedRef<HTMLDivElement>) => (
-    <section id={id} className={`container px-2 mx-auto overflow-hidden ${className}`} ref={ref}>
+const Section: React.FC<SectionProps> = ({ children, className = '', id = '' }) => <>
+    <section id={id} className={`container px-2 mx-auto overflow-hidden ${className}`}>
         {children}
     </section>
-));
-
-Section.displayName = 'Section';
+    <hr className='border-0  border-b-2 border-black/90' />
+</>
 
 export default Section;
