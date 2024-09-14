@@ -121,12 +121,12 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: white;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgba(0, 0, 0, 0.774);
 }
 
 /* Handle on hover */
@@ -138,7 +138,10 @@ html {
   scroll-behavior: smooth;
 }
 
-
+::selection {
+  background-color: rgba(0, 0, 0, 0.822);
+  color: white;
+}
 
 /* From Uiverse.io by JulanDeAlb */
 .hamburger {

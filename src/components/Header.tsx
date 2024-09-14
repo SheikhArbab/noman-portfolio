@@ -1,5 +1,5 @@
 import * as C from "@/components/index";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Header() {
     const links: { title: string; url: string }[] = [
@@ -11,26 +11,49 @@ export default function Header() {
         { title: 'Testimonials', url: '#testimonials' },
     ];
 
-    const [isChecked, setIsChecked] = useState<boolean>(false)
+    const [lastScrollY, setLastScrollY] = useState<number>(0);
+    const [isScrolled, setIsScrolled] = useState<boolean>(false);
+    const [isScrollingUp, setIsScrollingUp] = useState<boolean>(true);
+    const [isChecked, setIsChecked] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                setIsScrollingUp(false);
+            } else if (currentScrollY < lastScrollY) {
+                setIsScrollingUp(true);
+            }
+
+            setLastScrollY(currentScrollY);
+            setIsScrolled(currentScrollY > 0);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, [lastScrollY]);
 
     return (
-        <header className=" bg-white fixed inset-x-0 top-0">
-            <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-8" >
-                <figure className="w-40" >
+        <header className={`bg-white inset-x-0 top-0 z-50 transition-transform duration-300 ${isScrolled ? 'fixed shadow-md' : ''} ${isScrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
+            <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-8">
+                <figure className="w-40">
                     <img src="/imgs/logo.png" className="w-full h-full object-contain" alt="noman" />
                 </figure>
                 <nav>
                     <ul className="hidden md:flex flex-wrap items-center space-x-10">
                         {links.map((link) => (
                             <li key={link.title} className="relative h-fit w-fit before:absolute before:w-[120%] before:h-[0.20rem] before:rounded-full before:bg-black/80 before:-translate-x-1/2 before:left-1/2  before:-bottom-2 before:opacity-0 hover:before:opacity-100 before:duration-300 before:transition-all">
-                                <a href={link.url} className="capitalize text-black/80 font-semibold ">
+                                <a href={link.url} className="capitalize text-black/80 font-semibold">
                                     {link.title}
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </nav>
-                <a href="#contact" className="hidden md:block" >
+                <a href="#contact" className="hidden md:block">
                     <C.Button title="let's talk" />
                 </a>
                 {/* mobile nav start */}
@@ -45,13 +68,11 @@ export default function Header() {
                     </svg>
                 </label>
             </div>
-            <nav className={`duration-300 transition-all overflow-hidden w-full ${isChecked ? "max-h-96" : "max-h-0"
-                }`}
-            >
+            <nav className={`duration-300 transition-all overflow-hidden w-full ${isChecked ? "max-h-96" : "max-h-0"}`}>
                 <ul className="bg-white py-8 flex flex-col gap-6 px-4">
                     {links.map((link) => (
                         <li key={link.title} className="relative h-fit w-fit before:absolute before:w-full before:h-[0.20rem] before:rounded-full before:bg-black/80  before:-bottom-2 before:opacity-0 hover:before:opacity-100 before:duration-300 before:transition-all">
-                            <a href={link.url} className="capitalize text-black/80 font-bold text-xl ">
+                            <a href={link.url} className="capitalize text-black/80 font-bold text-xl">
                                 {link.title}
                             </a>
                         </li>
@@ -59,8 +80,6 @@ export default function Header() {
                 </ul>
             </nav>
             {/* mobile nav end */}
-
-
         </header>
     );
 }
