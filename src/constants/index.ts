@@ -97,6 +97,29 @@ class GenericClass {
             },
         ]
 
+
+    ExperienceCard: {
+        title: string;
+        date: string;
+        role: string;
+    }[] = [
+            {
+                title: "Global Shopaholics",
+                role: "Lead UI/UX Designer",
+                date: "August 2020 - February 2023"
+            },
+            {
+                title: "Carbonic IT Solutions",
+                role: "Senior UI/UX Designer",
+                date: "August 2020 - November 2022"
+            },
+            {
+                title: "DWizardz",
+                role: "UI/UX Designer",
+                date: "August 2018 - September 2019"
+            }
+        ]
+
 }
 
 export default new GenericClass();
