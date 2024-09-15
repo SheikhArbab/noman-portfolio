@@ -1,5 +1,6 @@
 import * as C from "@/components/index";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Header() {
     const links: { title: string; url: string }[] = [
@@ -70,9 +71,11 @@ export default function Header() {
         <header className={`bg-white overflow-hidden inset-x-0 top-0 z-50 transition-transform duration-300 
         ${isScrolled ? 'fixed shadow-md' : ''} ${isScrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-2 sm:gap-8">
-                <figure className="w-40">
-                    <img src="/imgs/logo.png" className="w-full h-full object-contain" alt="noman" />
-                </figure>
+                <Link to={'/'}>
+                    <figure className="w-40">
+                        <img src="/imgs/logo.png" className="w-full h-full object-contain filter invert" alt="noman" />
+                    </figure>
+                </Link>
                 <nav>
                     <ul className="hidden md:flex flex-wrap items-center space-x-10">
                         {links.map((link) => (

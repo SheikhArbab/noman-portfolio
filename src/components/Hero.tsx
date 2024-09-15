@@ -54,7 +54,7 @@ const Hero: React.FC = () => {
                     </a>
                 </div>
                 <ul className='flex flex-wrap items-center gap-7' >{G.socialLinks.map(v => <li key={v.title}>
-                    <a href={v.url} className='flex items-center justify-center text-xl font-semibold gap-4' >
+                    <a href={v.url} target='_blank' className='flex items-center justify-center text-xl font-semibold gap-4' >
                         <v.Icon />
                         <p>{v.title}</p>
                     </a>

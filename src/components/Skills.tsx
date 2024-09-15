@@ -1,14 +1,45 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import ProgressBar from "@ramonak/react-progress-bar";
 import * as C from "@/components/index";
 import G from "@/constants/index";
 
 const Skills: React.FC = () => {
+    const [animate, setAnimate] = useState(false);
+    const [animationStarted, setAnimationStarted] = useState(false);
+    const skillsRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const skillsSection = skillsRef.current;
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                console.log('IntersectionObserver Entry:', entry);
+                if (entry.isIntersecting && !animationStarted) {
+                    setAnimate(true);
+                    setAnimationStarted(true);
+                    console.log('Animation started');
+                }
+            });
+        }, { threshold: 0.5 });
+
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+
+        return () => {
+            if (skillsSection) {
+                observer.unobserve(skillsSection);
+            }
+        };
+    }, [animationStarted]);
+
+
     return (
         <C.Section
             className='py-8 md:py-20'
             id='skills'
             overflowhidden={false}
+            ref={skillsRef}
         >
             <div className='flex flex-wrap gap-5 relative'>
                 <div className='lg:sticky top-4 left-0 h-fit md:w-[50%] '>
@@ -20,15 +51,24 @@ const Skills: React.FC = () => {
                     </p>
                 </div>
                 <div className='flex-1 space-y-20 font-semibold p-5'>
-                    {G.skillsData.map(v => (
+                    {G.skillsData.map((v, index) => (
                         <div key={v.title}>
                             <p className='mb-2 text-sm md:text-2xl'>{v.title}</p>
                             <div className='relative'>
                                 <sup className='absolute right-0 -top-10 text-sm md:text-2xl'>{v.count}%</sup>
-                                <ProgressBar height='6px' labelClassName="text-transparent" completed={v.count} bgColor='#000000c9' />
+                                <ProgressBar
+                                    key={animate ? `progress-${index}` : `static-${index}`}
+                                    height='6px'
+                                    labelClassName="text-transparent"
+                                    animateOnRender={animate}
+                                    transitionTimingFunction='ease-in'
+                                    completed={v.count}
+                                    bgColor='#000000c9'
+                                />
                             </div>
                         </div>
                     ))}
+
                 </div>
             </div>
         </C.Section>

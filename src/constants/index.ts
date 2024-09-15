@@ -3,7 +3,7 @@ import { LuPencil } from 'react-icons/lu';
 import { CiMobile3 } from 'react-icons/ci';
 import { CgWebsite } from 'react-icons/cg';
 import { SiMaterialdesignicons } from 'react-icons/si';
-import { FaBehance, FaDribbble, FaLinkedin, FaRegLightbulb } from 'react-icons/fa6';
+import { FaBehance, FaFacebookF, FaLinkedin, FaRegLightbulb } from 'react-icons/fa6';
 
 class GenericClass {
     constructor() {
@@ -19,17 +19,17 @@ class GenericClass {
             {
                 Icon: FaBehance,
                 title: "Behance",
-                url: "#"
+                url: "https://www.behance.net/numanhussain021"
             },
             {
-                Icon: FaDribbble,
-                title: "DRIBBLE",
-                url: "#"
+                Icon: FaFacebookF,
+                title: "facebook",
+                url: "https://www.facebook.com/profile.php?id=61559672070345"
             },
             {
                 Icon: FaLinkedin,
                 title: "Linkedin",
-                url: "#"
+                url: "https://www.linkedin.com/in/numan-hussain-9864b0209"
             }
         ];
 

@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
                         </li>
                     </ul>
                     <ul className='flex flex-wrap items-center gap-7 text-gray-300' >{G.socialLinks.map(v => <li key={v.title}>
-                        <a href={v.url} className='font-semibold rounded-full overflow-hidden h-12 w-12' >
+                        <a href={v.url} target='_blank' className='font-semibold rounded-full overflow-hidden h-12 w-12' >
                             <C.Button
                                 className='px-2'
                             >
