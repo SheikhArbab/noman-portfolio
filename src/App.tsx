@@ -7,19 +7,27 @@ function App() {
   //RootLayout
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path='/' element={<L.RootLayout />}>
-      <Route index element={<P.Home />} />
+
+      {/* UserRoutes  */}
+      <Route path='/' element={<L.UserLayout />}>
+        <Route index element={<P.Home />} />
+      </Route>
+      {/* UserRoutes  */}
+
+
+
+      {/* LogOutRoutes  */}
+      <Route path='/' element={<L.LogOutLayout />}>
+        <Route path="/login" element={<P.Login />} />
+      </Route>
+      {/* LogOutRoutes  */}
+
+      {/* AdminRoutes  */}
+      <Route path='/admin' element={<L.AdminLayout />}>
+      </Route>
+      {/* AdminRoutes  */}
+
       <Route path="*" element={<P.NotFound />} />
-
-
-      {/* LogoutRoutes */}
-
-      {/* LogoutRoutes */}
-
-
-      {/* PrivateRoutes  */}
-
-      {/* PrivateRoutes  */}
-
     </Route>))
   //  RootLayout 
 
@@ -31,3 +39,7 @@ function App() {
 }
 
 export default App
+
+
+
+
