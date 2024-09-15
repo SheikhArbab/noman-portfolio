@@ -4,7 +4,7 @@ import G from "@/constants/index";
 
 const Contact: React.FC = () => {
     return (
-        <C.Section className='py-8 md:py-20' id='portfolio'>
+        <C.Section className='py-8 md:py-20' id='contact'>
             <h1 className="text-center mb-20 font-bold text-2xl md:text-7xl ">
                 Get In Touch With Me
             </h1>
