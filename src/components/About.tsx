@@ -21,7 +21,7 @@ const About: React.FC = () => {
                     <p className='uppercase text-xs font-bold' >GET IN TOUCH WITH ME</p>
                 </div>
                 <p className='text-sm md:text-3xl font-semibold w-full sm:text-justify ' >
-                    Hello, I’m Numan Hussain, a dedicated and innovative <b>Graphic Designer</b> based in Islamabad, Pakistan. With a strong foundation in graphic design, web design, and digital marketing, I specialize in crafting engaging and user-centric digital experiences across web, mobile, and tablet platforms. I am passionate about transforming ideas into visually appealing and functional designs that enhance user experiences and drive success.
+                    With over 3 years of experience as a creative <b>graphic designer</b>, I specialize in delivering visually compelling designs that elevate brands. My expertise spans a wide range of services, including social media content, logo design, and marketing materials. Having collaborated with leading real estate companies and educational institutions, I bring a unique blend of creativity and strategy to every project. Passionate about delivering impactful solutions, I am dedicated to helping clients stand out in competitive markets.
                 </p>
                 <hr className='border-0 border-b-2 border-black/90 my-4 md:my-16' />
                 <ul className='flex flex-wrap items-center justify-between p-0 w-full ' >

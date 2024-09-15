@@ -37,12 +37,11 @@ class GenericClass {
         title: string;
         count: number;
     }[] = [
-            { title: "Figma", count: 93 },
-            { title: "Adobe XD", count: 96 },
-            { title: "Adobe Illustrator", count: 94 },
-            { title: "Adobe Photoshop", count: 92 },
-            { title: "Wondershare Filmora", count: 93 },
-            { title: "Adobe Premier Pro", count: 9 }
+            { title: "Adobe Photoshop", count: 80 },
+            { title: "Adobe Illustrator", count: 60 },
+            { title: "Adobe Premier Pro", count: 20 },
+            { title: "Capcut PC", count: 50 },
+            { title: "Figma", count: 30 },
         ];
 
     cardData: { title: string; Icon: IconType }[] = [
