@@ -67,7 +67,8 @@ export default function Header() {
         };
     }, [links]);
     return (
-        <header className={`bg-white overflow-hidden inset-x-0 top-0 z-50 transition-transform duration-300 ${isScrolled ? 'fixed shadow-md' : ''} ${isScrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
+        <header className={`bg-white overflow-hidden inset-x-0 top-0 z-50 transition-transform duration-300 
+        ${isScrolled ? 'fixed shadow-md' : ''} ${isScrollingUp ? 'translate-y-0' : '-translate-y-full'}`}>
             <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-2 sm:gap-8">
                 <figure className="w-40">
                     <img src="/imgs/logo.png" className="w-full h-full object-contain" alt="noman" />

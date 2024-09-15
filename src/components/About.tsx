@@ -44,7 +44,7 @@ const About: React.FC = () => {
                     alt="Numan Hussain"
                 />
                 <img
-                    className='absolute bottom-0 right-0 -rotate-12'
+                    className='absolute bottom-32 right-12 -rotate-12'
                     src="/imgs/sign.png"
                     alt="Numan Hussain"
                 />
