@@ -9,7 +9,6 @@ const Portfolio: React.FC = () => {
             <h1 className="text-center mb-20 font-bold text-2xl md:text-7xl ">
                 Take a Look My Work
             </h1>
-
             <S.Carousel  >
                 <S.CarouselContent>
                     {G.projectData.map(v => <S.CarouselItem
@@ -25,7 +24,6 @@ const Portfolio: React.FC = () => {
                 <S.CarouselPrevious />
                 <S.CarouselNext />
             </S.Carousel>
-
         </C.Section>
     )
 }

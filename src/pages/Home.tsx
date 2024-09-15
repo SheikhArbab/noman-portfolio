@@ -9,8 +9,8 @@ export default function Home() {
             <C.Skills />
             {/* <C.Experience /> */}
             <C.Portfolio />
-            {/* <C.Testimonial />
-            <C.Contact /> */}
+            {/* <C.Testimonial /> */}
+            <C.Contact />
         </>
     )
 }

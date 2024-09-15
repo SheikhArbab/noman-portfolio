@@ -1,9 +1,9 @@
-import { FaBehance, FaDribbble, FaLinkedin, FaRegLightbulb } from 'react-icons/fa6';
+import { IconType } from 'react-icons';
 import { LuPencil } from 'react-icons/lu';
-import { SiMaterialdesignicons } from 'react-icons/si';
 import { CiMobile3 } from 'react-icons/ci';
 import { CgWebsite } from 'react-icons/cg';
-import { IconType } from 'react-icons';
+import { SiMaterialdesignicons } from 'react-icons/si';
+import { FaBehance, FaDribbble, FaLinkedin, FaRegLightbulb } from 'react-icons/fa6';
 
 class GenericClass {
     constructor() {
@@ -17,13 +17,13 @@ class GenericClass {
         title: string
     }[] = [
             {
-                Icon: FaDribbble,
-                title: "DRIBBLE",
+                Icon: FaBehance,
+                title: "Behance",
                 url: "#"
             },
             {
-                Icon: FaBehance,
-                title: "Behance",
+                Icon: FaDribbble,
+                title: "DRIBBLE",
                 url: "#"
             },
             {
@@ -32,7 +32,6 @@ class GenericClass {
                 url: "#"
             }
         ];
-
 
     skillsData: {
         title: string;
@@ -45,7 +44,6 @@ class GenericClass {
             { title: "Wondershare Filmora", count: 93 },
             { title: "Adobe Premier Pro", count: 9 }
         ];
-
 
     cardData: { title: string; Icon: IconType }[] = [
         { title: "Graphic Design", Icon: LuPencil },

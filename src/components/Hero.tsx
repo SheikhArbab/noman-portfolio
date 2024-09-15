@@ -58,7 +58,8 @@ const Hero: React.FC = () => {
                         <v.Icon />
                         <p>{v.title}</p>
                     </a>
-                </li>)}</ul>
+                </li>)}
+                </ul>
             </div>
         </C.Section>
     )
