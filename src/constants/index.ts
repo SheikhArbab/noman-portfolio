@@ -103,19 +103,19 @@ class GenericClass {
         role: string;
     }[] = [
             {
-                title: "Global Shopaholics",
-                role: "Lead UI/UX Designer",
-                date: "August 2020 - February 2023"
+                title: "Gargash Autos UAE",
+                role: "Senior Graphic Designer",
+                date: "(2021-2022)"
             },
             {
-                title: "Carbonic IT Solutions",
-                role: "Senior UI/UX Designer",
-                date: "August 2020 - November 2022"
+                title: "HR Estate & Builders",
+                role: "Creative Lead Designer",
+                date: "(2023- Till Now)"
             },
             {
-                title: "DWizardz",
-                role: "UI/UX Designer",
-                date: "August 2018 - September 2019"
+                title: "Checkmate Consultancy",
+                role: "Internee Designer",
+                date: "(2019-2020)"
             }
         ]
 

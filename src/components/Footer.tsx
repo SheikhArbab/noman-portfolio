@@ -26,16 +26,16 @@ const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
             <ul className="flex items-center gap-14 flex-wrap" >
                 <li>
                     <h6 className="uppercase text-white/40 font-semibold" >address</h6>
-                    <a className="uppercase text-white font-semibold" >Islamabad, Pakistan</a>
+                    <a className="uppercase text-white font-semibold" >Lahore, Pakistan</a>
                 </li>
                 <li>
                     <h6 className="uppercase text-white/40 font-semibold" >EMAIL</h6>
-                    <a href="mailto:numan99@gmail.com" className="uppercase text-white font-semibold" >numan99@gmail.com
+                    <a href="mailto:jnuman99@gmail.com" className="uppercase text-white font-semibold" >jnuman99@gmail.com
                     </a>
                 </li>
                 <li>
                     <h6 className="uppercase text-white/40 font-semibold" >PHONE</h6>
-                    <a href="tel:+923064510974" className="uppercase text-white font-semibold" >03064510974
+                    <a href="tel:+92 306 451 0974" className="uppercase text-white font-semibold" >+92 306 451 0974
                     </a>
                 </li>
             </ul>
