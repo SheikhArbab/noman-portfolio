@@ -1,7 +1,7 @@
 import React from 'react';
 import G from "@/constants/index";
 
-const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
+const Footer: React.FC = () => <footer className="ui-bg overflow-hidden">
     <div className="mx-auto container px-2 py-20" >
         <div className="flex items-center justify-between gap-4 flex-wrap "  >
             <div>
@@ -20,7 +20,6 @@ const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
         </div>
         <div className="flex flex-col gap-48 py-20" >
             <hr className="opacity-30" />
-            <hr className="opacity-30" />
         </div>
         <div className="flex items-center justify-between gap-4 flex-wrap" >
             <ul className="flex items-center gap-14 flex-wrap" >
@@ -30,7 +29,7 @@ const Footer: React.FC = () => <footer className="bg-black/80 overflow-hidden">
                 </li>
                 <li>
                     <h6 className="uppercase text-white/40 font-semibold" >EMAIL</h6>
-                    <a href="mailto:jnuman99@gmail.com" className="uppercase text-white font-semibold" >jnuman99@gmail.com
+                    <a href="mailto:jnuman99@gmail.com" className="capitalize text-white font-semibold" >jnuman99@gmail.com
                     </a>
                 </li>
                 <li>

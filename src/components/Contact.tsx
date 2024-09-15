@@ -14,11 +14,11 @@ const Contact: React.FC = () => {
                     <ul className="flex flex-col gap-8 text-sm my-4 md:my-12" >
                         <li>
                             <h6 className="uppercase text-white/40 font-semibold" >address</h6>
-                            <a className="uppercase text-white font-semibold" >Lahore, Pakistan</a>
+                            <a className="  text-white font-semibold" >Lahore, Pakistan</a>
                         </li>
                         <li>
                             <h6 className="uppercase text-white/40 font-semibold" >EMAIL</h6>
-                            <a href="mailto:jnuman99@gmail.com" className="uppercase text-white font-semibold" >jnuman99@gmail.com
+                            <a href="mailto:jnuman99@gmail.com" className="  text-white font-semibold" >jnuman99@gmail.com
                             </a>
                         </li>
                         <li>

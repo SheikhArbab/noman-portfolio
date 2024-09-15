@@ -80,19 +80,19 @@ class GenericClass {
         about: string;
     }[] = [
             {
-                date: "February 2023",
-                title: "CEO Of Global Shopaholics",
-                about: "Working with Muiz has been an absolute pleasure. His keen eye for detail and profound understanding of user behavior have consistently elevated our projects. Muiz’s ability to translate complex requirements into intuitive and engaging designs is remarkable. He always goes above and beyond to ensure that the user experience is seamless and delightful. His collaborative approach and innovative mindset make him an invaluable asset to any team."
+                date: "(2019-2020)",
+                title: "Muhammad Usman Arshad, CEO, Checkmate Consultancy",
+                about: "During Numan's internship at Checkmate Consultancy, their creativity and dedication were clear from day one. They consistently demonstrated a strong work ethic and quickly adapted to our fast-paced environment. Their eye for design and passion for learning made them an asset to the team. I have no doubt they will continue to excel in their career."
             },
             {
-                date: "November 2022",
-                title: "CEO Of Carbonic IT Solutions",
-                about: "Muiz's creativity and technical proficiency set him apart as a UX/UI designer. His designs not only meet the client's specifications but also exceed expectations in functionality and user engagement. During his time at Carbonic IT Solutions, Muiz demonstrated exceptional skills in user research and prototype development. His work consistently contributed to our clients' success, and his collaborative spirit made him a key player in our projects."
+                date: "(2021-2022)",
+                title: "Shehab Gargash, CEO, Gargash Autos UAE",
+                about: "Numan Hussain was an integral part of our design team at Gargash Autos. As Senior Graphic Designer, their innovative ideas and design expertise helped elevate our brand’s visual identity. Their attention to detail, professionalism, and ability to manage multiple projects efficiently made them a valuable team member. I highly recommend them for any creative role"
             },
             {
-                date: "September 2019",
-                title: "CEO Of DWizardz",
-                about: "Muiz brings a unique blend of artistic vision and practical design to every project. His ability to understand user needs and translate them into beautiful, functional designs is exceptional. At DWizardz, Muiz played a crucial role in developing user-friendly interfaces that significantly improved our product offerings. He is a proactive problem solver, always ready to tackle challenges with innovative solutions. I highly recommend him for any UX/UI design role."
+                date: "(2023- Till Now)",
+                title: "Zeeshan Shoukat, CEO, HR Estate & Builders",
+                about: "As a Creative Graphic Designer at HR Estate & Builders, Numan Hussain has consistently delivered exceptional design work that resonates with our brand. Their creativity and ability to translate complex ideas into visually appealing designs have been crucial to our marketing success."
             },
         ]
 
