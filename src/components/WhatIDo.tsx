@@ -8,7 +8,7 @@ const WhatIDo: React.FC = () => {
     return (
         <C.Section className='py-8 md:py-20' id='what'>
             <h1 className="text-center font-bold text-2xl md:text-7xl ">What I Do ?</h1>
-            <ul className='flex flex-wrap items-center justify- gap-3 md:gap-8 py-5 md:py-24' >
+            <ul className='flex flex-wrap items-center justify-center gap-3 md:gap-8 py-5 md:py-24' >
                 {G.cardData.map(v => <li
                     key={v.title}
                     className='border border-black/90 h-40 w-full lg:w-[25rem] p-8 flex flex-col items-start gap-4 duration-300 transition-all
