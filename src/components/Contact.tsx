@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         enableReinitialize: true,
         validationSchema: Yup.object({
             name: Yup.string()
-                .required('name is required'),
+                .required('Name is required'),
             email: Yup.string()
                 .email('Invalid email address')
                 .required('Email is required'),
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                             placeholder='example@email.com'
                             className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none' />
                         {touched.email && errors.email && (
-                            <p className="text-red-500 text-xs ">{errors.name}</p>
+                            <p className="text-red-500 text-xs ">{errors.email}</p>
                         )}
                         <textarea
                             value={values.message}
