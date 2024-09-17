@@ -110,39 +110,45 @@ const Contact: React.FC = () => {
                 <div className='flex-1' >
                     <h1 className='text-white mb-4 text-xl md:text-2xl md:mb-12 font-semibold' >Send Me a Message</h1>
                     <div className="flex flex-col gap-8 ">
-                        <input type="text"
-                            value={values.name}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            name='name'
-                            placeholder='Name'
-                            className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none' />
-                        {touched.name && errors.name && (
-                            <p className="text-red-500 text-xs ">{errors.name}</p>
-                        )}
-                        <input type="email"
-                            value={values.email}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            name='email'
-                            placeholder='example@email.com'
-                            className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none' />
-                        {touched.email && errors.email && (
-                            <p className="text-red-500 text-xs ">{errors.email}</p>
-                        )}
-                        <textarea
-                            value={values.message}
-                            onBlur={handleBlur}
-                            onChange={handleChange}
-                            name="message"
-                            placeholder='Message'
-                            className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none'
-                        >
+                        <div>
+                            <input type="text"
+                                value={values.name}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                name='name'
+                                placeholder='Name'
+                                className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none' />
+                            {touched.name && errors.name && (
+                                <p className="text-red-500 text-xs ">{errors.name}</p>
+                            )}
+                        </div>
+                        <div>
+                            <input type="email"
+                                value={values.email}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                name='email'
+                                placeholder='example@email.com'
+                                className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none' />
+                            {touched.email && errors.email && (
+                                <p className="text-red-500 text-xs ">{errors.email}</p>
+                            )}
+                        </div>
+                        <div>
+                            <textarea
+                                value={values.message}
+                                onBlur={handleBlur}
+                                onChange={handleChange}
+                                name="message"
+                                placeholder='Message'
+                                className='w-full block text-sm rounded-md px-4 py-2 focus:outline-none'
+                            >
 
-                        </textarea>
-                        {touched.message && errors.message && (
-                            <p className="text-red-500 text-xs ">{errors.message}</p>
-                        )}
+                            </textarea>
+                            {touched.message && errors.message && (
+                                <p className="text-red-500 text-xs ">{errors.message}</p>
+                            )}
+                        </div>
                         <C.Button
                             isLoading={isLoading}
                             type="submit"
