@@ -9,4 +9,6 @@ export { default as Experience } from "./Experience";
 export { default as Portfolio } from "./Portfolio";
 export { default as Testimonial } from "./Testimonial";
 export { default as Contact } from "./Contact";
+export { default as ScrollTop } from "./ScrollTop";
+export { default as Spinner } from "./Spinner";
 export { default as Footer } from "./Footer";
