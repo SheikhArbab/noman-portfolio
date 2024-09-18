@@ -23,7 +23,8 @@ function App() {
       {/* LogOutRoutes  */}
 
       {/* AdminRoutes  */}
-      <Route path='/admin' element={<L.AdminLayout />}>
+      <Route path='/dashboard' element={<L.AdminLayout />}>
+        <Route path="/dashboard/" element={<h1>private</h1>} />
       </Route>
       {/* AdminRoutes  */}
 

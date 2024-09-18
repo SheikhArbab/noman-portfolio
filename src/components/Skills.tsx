@@ -13,11 +13,9 @@ const Skills: React.FC = () => {
 
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
-                console.log('IntersectionObserver Entry:', entry);
                 if (entry.isIntersecting && !animationStarted) {
                     setAnimate(true);
                     setAnimationStarted(true);
-                    console.log('Animation started');
                 }
             });
         }, { threshold: 0.5 });

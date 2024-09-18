@@ -1,12 +1,13 @@
 import * as Yup from 'yup';
 import * as C from "@/components/index";
 import { useFormik } from 'formik';
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { currentUser } from "@/stores/features/authSlice";
 import * as R from "@/stores/services/auth";
 import { useToast } from "@/hooks/use-toast"
+import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 
 
 
@@ -23,6 +24,8 @@ const Login: React.FC = () => {
 
     const dispatch = useDispatch()
 
+    const [showPass, setShowPass] = useState<boolean>(true);
+
     const [loginUser, { isLoading }] = R.useSignInMutation()
 
     const { handleChange, handleSubmit, handleBlur, touched, errors, values } = useFormik({
@@ -38,7 +41,7 @@ const Login: React.FC = () => {
                 .email('Invalid email address')
                 .required('Email is required'),
             password: Yup.string()
-                .min(3).max(10)
+                .min(3).max(18)
                 .required('Password is required'),
         }),
         onSubmit: async (formValues) => {
@@ -46,10 +49,6 @@ const Login: React.FC = () => {
             try {
 
                 const res: any = await loginUser(formValues)
-
-                if (!res.data.success) {
-                    toast({ variant: "destructive", title: "Wrong credentials !" })
-                }
 
                 if (res && res.data && res.data.success) {
 
@@ -59,10 +58,10 @@ const Login: React.FC = () => {
 
                     dispatch(currentUser({ user: rest, token }))
                     setTimeout(() => {
-                        navigate('/')
+                        navigate('/dashboard')
                     }, 1000);
                 } else {
-                    toast({ variant: "destructive", title: res.error.data.message })
+                    toast({ variant: "destructive", title: "Wrong credentials !" })
                 }
 
             } catch (error: any) {
@@ -123,18 +122,24 @@ const Login: React.FC = () => {
                                 >
                                     Password
                                 </label>
-                                <input
-                                    type="password"
-                                    name="password"
-                                    id="password"
-                                    value={values.password}
-                                    onBlur={handleBlur}
-                                    onChange={handleChange}
-                                    placeholder="••••••••"
-                                    className=" border rounded-lg   block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white  focus:ring-blue-500  
+                                <div className='relative' >
+                                    <input
+                                        type={showPass ? "password" : "text"}
+                                        name="password"
+                                        id="password"
+                                        value={values.password}
+                                        onBlur={handleBlur}
+                                        onChange={handleChange}
+                                        placeholder="••••••••"
+                                        className=" border rounded-lg   block w-full p-2.5  bg-gray-700  border-gray-600  placeholder-gray-400  text-white  focus:ring-blue-500
                                     focus:border-blue-500"
-
-                                />
+                                    />
+                                    <button
+                                        type='button'
+                                        onClick={() => setShowPass(!showPass)} className='absolute right-5 top-1/2 -translate-y-1/2' >
+                                        {showPass ? <FaEye /> : <FaEyeSlash />}
+                                    </button>
+                                </div>
                                 {touched.password && errors.password && (
                                     <p className="text-red-500 text-xs ">{errors.password}</p>
                                 )}

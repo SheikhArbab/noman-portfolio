@@ -4,7 +4,7 @@ export const authApi = createApi({
     reducerPath: 'userApi',
     tagTypes: ['users'],
     baseQuery: fetchBaseQuery({
-        baseUrl: import.meta.env.VITE_backend + "api/auth/",
+        baseUrl: import.meta.env.VITE_backend + "auth/",
         credentials: 'include',
         mode: 'cors',
         prepareHeaders: (headers) => {
