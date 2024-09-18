@@ -1,14 +1,14 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import { Link, NavLink } from "react-router-dom";
-import { UserState } from "@/types";
+// import { UserState } from "@/types";
 // import { toggleButton } from "@/stores/features/toggleSlice";
 
-const AdminNav = () => {
-    const dispatch = useDispatch();
+const AdminNav: React.FC = () => {
+    // const dispatch = useDispatch();
     // const toggle = useSelector((state) => state.toggle.value);
 
-    const currentUser = useSelector((state: UserState) => state.auth.user);
+    // const currentUser = useSelector((state: UserState) => state.auth.user);
 
     return (
         <nav className="relative px-4 py-4 flex justify-between items-center glass">

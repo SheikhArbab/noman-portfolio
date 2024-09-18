@@ -3,16 +3,16 @@ import { NavLink } from "react-router-dom";
 import {
     FaChartPie,
     FaCode,
-    FaInfoCircle,
+    // FaInfoCircle,
     FaSignOutAlt,
     FaHandsHelping,
 } from "react-icons/fa";
-import { FaUserSecret } from "react-icons/fa6";
+// import { FaUserSecret } from "react-icons/fa6";
 import { MdWork, MdReviews } from "react-icons/md";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { currentUser } from "../stores/features/authSlice";
 
-const Sidebar = () => {
+const Sidebar: React.FC = () => {
     const dispatch = useDispatch();
     // const toggle = useSelector((state) => state.toggle.value);
 
