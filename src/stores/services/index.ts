@@ -1,4 +1,5 @@
 import { authApi } from "./auth";
+import { projectApi } from "./project";
 
 
-export { authApi };
+export { authApi, projectApi };

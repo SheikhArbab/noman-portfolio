@@ -23,7 +23,15 @@ export interface UserInitialState {
 export interface UserState {
     auth: UserInitialState;
     toggle: {
-        value: boolean
+        value: boolean;
     }
 }
 
+export interface projectData {
+    _id: string;
+    img: string;
+    title: string;
+    url: string;
+    createdAt: Date;
+    updatedAt: Date;
+}
