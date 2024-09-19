@@ -5,6 +5,7 @@
 export interface User {
     _id: string;
     email: string;
+    avatar: string;
     password: string;
     createdAt: string;
     updatedAt: string;
@@ -20,6 +21,9 @@ export interface UserInitialState {
 
 
 export interface UserState {
-    auth: UserInitialState
+    auth: UserInitialState;
+    toggle: {
+        value: boolean
+    }
 }
 

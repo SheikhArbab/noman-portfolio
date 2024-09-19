@@ -1,22 +1,15 @@
 import React from "react";
+import G from "@/constants/index";
 import { NavLink } from "react-router-dom";
-import {
-    FaChartPie,
-    FaCode,
-    // FaInfoCircle,
-    FaSignOutAlt,
-    FaHandsHelping,
-} from "react-icons/fa";
-// import { FaUserSecret } from "react-icons/fa6";
-import { MdWork, MdReviews } from "react-icons/md";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { currentUser } from "../stores/features/authSlice";
+import { FaSignOutAlt } from "react-icons/fa";
+import { UserState } from "@/types";
 
 const Sidebar: React.FC = () => {
+
     const dispatch = useDispatch();
-    // const toggle = useSelector((state) => state.toggle.value);
-
-
+    const { value: toggle } = useSelector((state: UserState) => state.toggle);
 
     return (
         <>
@@ -24,82 +17,31 @@ const Sidebar: React.FC = () => {
                 id="default-sidebar"
                 className={`
        group top-0 left-0 z-40 overflow-hidden w-full md:w-20 transition-all 
-       md:hover:w-64 duration-300 glass absolute md:translate-x-0 h-full ${true && " -translate-x-full "
+       md:hover:w-64 duration-300 glass absolute md:translate-x-0 h-full ${toggle && " -translate-x-full "
                     }`}
                 aria-label="Sidebar"
             >
-                <div className="h-full px-3 py-4 overflow-y-auto">
+                <div className="h-full px-3 py-4 overflow-y-auto flex flex-col justify-between pb-16">
                     <ul className="space-y-2 font-medium">
-                        <li>
+
+                        {G.adminNav.map(v => <li key={v.title} >
                             <NavLink
-                                to={"/dashboard"}
-                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
+                                to={v.url}
+                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-black/80 group w-full h-10 overflow-md:hidden text-nowrap"
                             >
-                                <FaChartPie className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Dashboard</span>
+                                <v.icon className="w-5 h-5 text-gray-300 duration-100 transition-all" />
+                                <span className="md:hidden group-hover:block">{v.title}</span>
                             </NavLink>
-                        </li>
-                        {/* <li>
-              <NavLink
-                to={"/about"}
-                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-              >
-                <FaInfoCircle className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                <span className="md:hidden group-hover:block">About</span>
-              </NavLink>
-            </li> */}
-                        <li>
-                            <NavLink
-                                to={"/skills"}
-                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-                            >
-                                <FaCode className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Skills</span>
-                            </NavLink>
-                        </li>
-                        {/* <li>
-              <NavLink
-                to={"/users"}
-                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-              >
-                <FaUserSecret className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                <span className="md:hidden group-hover:block">Users</span>
-              </NavLink>
-            </li> */}
-                        <li>
-                            <NavLink
-                                to={"/projects"}
-                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-                            >
-                                <MdWork className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Projects</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to={"/testimonial"}
-                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-                            >
-                                <MdReviews className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Testimonial</span>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to={"/contact"}
-                                className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap"
-                            >
-                                <FaHandsHelping className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Contact</span>
-                            </NavLink>
-                        </li>
-                        <li onClick={() => dispatch(currentUser({ user: null, token: null }))}>
-                            <button className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-primaryBg group w-full h-10 overflow-md:hidden text-nowrap">
-                                <FaSignOutAlt className="w-5 h-5 text-gray-300 duration-100 transition-all" />
-                                <span className="md:hidden group-hover:block">Log Out</span>
-                            </button>
-                        </li>
+                        </li>)}
+
                     </ul>
+                    <button
+                        onClick={() => dispatch(currentUser({ user: null, token: null }))}
+                        className="flex items-center duration-100 transition-all ps-4 gap-3 rounded-lg text-white hover:bg-black/80
+                         group w-full h-10 overflow-md:hidden text-nowrap">
+                        <FaSignOutAlt className="w-5 h-5 text-gray-300 duration-100 transition-all" />
+                        <span className="md:hidden group-hover:block">Log Out</span>
+                    </button>
                 </div>
             </aside>
         </>

@@ -58,7 +58,7 @@ const Login: React.FC = () => {
 
                     dispatch(currentUser({ user: rest, token }))
                     setTimeout(() => {
-                        navigate('/dashboard')
+                        navigate('/admin/dashboard')
                     }, 1000);
                 } else {
                     toast({ variant: "destructive", title: "Wrong credentials !" })

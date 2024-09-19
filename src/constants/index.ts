@@ -3,9 +3,16 @@ import { LuPencil } from 'react-icons/lu';
 import { CiMobile3 } from 'react-icons/ci';
 import { CgWebsite } from 'react-icons/cg';
 import { SiMaterialdesignicons } from 'react-icons/si';
+import {
+    FaChartPie,
+    FaCode,
+    FaHandsHelping,
+} from "react-icons/fa";
+import { MdWork, MdReviews } from "react-icons/md";
 import { FaBehance, FaFacebookF, FaLinkedin, FaRegLightbulb } from 'react-icons/fa6';
 
 class GenericClass {
+
     constructor() {
 
     }
@@ -117,6 +124,38 @@ class GenericClass {
                 role: "Internee Designer",
                 date: "(2019-2020)"
             }
+        ]
+
+    adminNav: {
+        icon: IconType;
+        title: string;
+        url: string;
+    }[] = [
+            {
+                icon: FaChartPie,
+                title: "Dashboard",
+                url: "/admin/dashboard"
+            },
+            {
+                icon: FaCode,
+                title: "Skills",
+                url: "/admin/skills"
+            },
+            {
+                icon: MdWork,
+                title: "Projects",
+                url: "/admin/projects"
+            },
+            {
+                icon: MdReviews,
+                title: "Testimonial",
+                url: "/admin/testimonial"
+            },
+            {
+                icon: FaHandsHelping,
+                title: "Contact",
+                url: "/admin/contact"
+            },
         ]
 
 }

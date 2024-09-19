@@ -8,6 +8,7 @@ import { persistReducer } from 'redux-persist';
 // Combine reducers
 const rootReducer = combineReducers({
     auth: F.authReducer,
+    toggle: F.toggleReducer,
     [S.authApi.reducerPath]: S.authApi.reducer
 });
 
