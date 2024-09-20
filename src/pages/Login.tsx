@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { currentUser } from "@/stores/features/authSlice";
 import * as R from "@/stores/services/auth";
-import { useToast } from "@/hooks/use-toast"
+import { useToast } from "@/hooks/use-toast";
 import { FaEye, FaEyeSlash } from 'react-icons/fa6';
 
 

@@ -5,7 +5,7 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 const LogoutLayout: React.FC = () => {
     const { token } = useSelector((state: UserState) => state.auth)
-    return token ? <Navigate to="/dashboard" replace /> : <Outlet />
+    return token ? <Navigate to="/admin/dashboard" replace /> : <Outlet />
 
 }
 

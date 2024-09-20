@@ -1,11 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Loading } from "@/pages/index";
 import { useGetAllProjectsQuery } from '@/stores/services/project';
 import { projectData } from '@/types/index';
-import { Button } from '@/components';
+import { Button, ProjectModal } from '@/components/index';
 
 const Project: React.FC = () => {
-    const { isLoading, data } = useGetAllProjectsQuery({ page: 1, limit: 50, search: "" });
+    const { isLoading, data, refetch } = useGetAllProjectsQuery({ page: 1, limit: 50, search: "" });
+
+    const [showProjectModal, setShowProjectModal] = useState<boolean>(false);
+
+    useEffect(() => {
+        refetch()
+    }, [])
+
 
     if (isLoading) {
         return <Loading />;
@@ -13,11 +20,7 @@ const Project: React.FC = () => {
 
     const { projects, totalProjects } = data || { projects: [], totalProjects: 0 };
 
-    // Function to handle creating a new project
-    const handleCreateProject = () => {
-        console.log("Create new project");
-        // You can navigate to a new page or show a modal here
-    };
+
 
     return (
         <div className='w-full'>
@@ -25,13 +28,17 @@ const Project: React.FC = () => {
 
             <div className='flex items-end justify-center px-4' >
                 <Button isLoading={isLoading}
-                    onClick={handleCreateProject}
+                    onClick={() => setShowProjectModal(!showProjectModal)}
                     className='ml-auto'
                 >
                     Add New Project
                 </Button>
             </div>
-
+            {showProjectModal && <ProjectModal
+                isUpdate={false}
+                setShowProjectModal={setShowProjectModal}
+                showProjectModal={showProjectModal}
+            />}
             {totalProjects === 0 ? (
                 <p className='text-center min-h-screen flex items-center justify-center font-bold text-white'>No projects available.</p>
             ) : (

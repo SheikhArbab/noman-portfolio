@@ -73,7 +73,7 @@ export default function Header() {
             <div className="mx-auto flex items-center justify-between flex-wrap container px-2 py-8 gap-2 sm:gap-8">
                 <Link to={'/'}>
                     <figure className="w-40">
-                        <img src="/imgs/logo.png" className="w-full h-full object-contain filter invert" alt="noman" />
+                        <img src="/imgs/logo.png" className="w-full h-full object-contain filter " alt="noman" />
                     </figure>
                 </Link>
                 <nav>

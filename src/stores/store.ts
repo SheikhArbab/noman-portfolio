@@ -1,16 +1,16 @@
-import * as F from './features/index';
-import * as S from "./services/index"
-import storage from 'redux-persist/lib/storage';
-import persistStore from 'redux-persist/es/persistStore';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+import persistStore from 'redux-persist/es/persistStore';
+import * as F from '@/stores/features/index';
+import * as S from '@/stores/services/index';
 
 // Combine reducers
 const rootReducer = combineReducers({
     auth: F.authReducer,
     toggle: F.toggleReducer,
     [S.authApi.reducerPath]: S.authApi.reducer,
-    [S.projectApi.reducerPath]: S.projectApi.reducer
+    [S.projectApi.reducerPath]: S.projectApi.reducer,
 });
 
 // Configure Redux persist
@@ -23,14 +23,11 @@ const persistConfig = {
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 // Create Redux store
-export const store: any = configureStore({
+export const store = configureStore({
     reducer: persistedReducer,
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({ serializableCheck: false })
-            .concat(
-                S.authApi.middleware,
-                S.projectApi.middleware
-            ),
+            .concat(S.projectApi.middleware, S.authApi.middleware),
 });
 
 // Create Redux persistor

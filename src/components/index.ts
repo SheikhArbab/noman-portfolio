@@ -13,4 +13,5 @@ export { default as ScrollTop } from "./ScrollTop";
 export { default as Spinner } from "./Spinner";
 export { default as Sidebar } from "./Sidebar";
 export { default as AdminNav } from "./AdminNav";
+export { default as ProjectModal } from "./ProjectModal";
 export { default as Footer } from "./Footer";

@@ -1,13 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const projectApi = createApi({
-    reducerPath: 'projectApi',
+    reducerPath: "projectApi",
+    tagTypes: ["users"],
     baseQuery: fetchBaseQuery({
         baseUrl: import.meta.env.VITE_backend + "project/",
-        credentials: 'include',
-        mode: 'cors',
+        credentials: "include", // To send cookies if needed
+        mode: "cors",
         prepareHeaders: (headers) => {
-            headers.set('Content-Type', 'application/json');
+            headers.set("Content-Type", "application/json");
             return headers;
         },
     }),
