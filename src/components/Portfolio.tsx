@@ -10,14 +10,15 @@ const Portfolio: React.FC = () => {
                 Take a Look My Work
             </h1>
             <S.Carousel  >
-                <S.CarouselContent>
+                <S.CarouselContent className='' >
                     {G.projectData.map(v => <S.CarouselItem
+                        onClick={() => window.open(v.url, "_blank")}
                         key={v.title}
-                        className="md:basis-1/2 lg:basis-1/3"
+                        className="md:basis-1/2 lg:basis-1/3 group overflow-hidden cursor-pointer"
                     >
-                        <figure className='  w-full' >
-                            <img src={v.img} className='w-full  object-cover' alt={v.title} />
-                            <figcaption className='capitalize text-sm md:text-3xl font-semibold mt-4' >{v.title}</figcaption>
+                        <figure className='w-full  overflow-hidden ' >
+                            <img src={v.img} className='w-full rounded-lg overflow-hidden object-cover h-64 group-hover:scale-105 duration-300 transition-all' alt={v.title} />
+                            <figcaption className='capitalize text-sm md:text-3xl font-semibold mt-4 group-hover:underline' >{v.title}</figcaption>
                         </figure>
                     </S.CarouselItem>)}
                 </S.CarouselContent>

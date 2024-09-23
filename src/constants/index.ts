@@ -65,21 +65,41 @@ class GenericClass {
         url: string;
     }[] = [
             {
-                img: "/imgs/project/1.png",
-                title: "project 1",
-                url: "#"
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/463c18164060365.63f00a86bfdf8.jpg",
+                title: "Logo Folio",
+                url: "https://www.behance.net/gallery/164060365/MY-LOGO-FOLIO"
             },
             {
-                img: "/imgs/project/2.png",
-                title: "project 2",
-                url: "#"
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/0f52af158276863.63887859b2c3a.jpg",
+                title: "My Portfolio",
+                url: "https://www.behance.net/gallery/158276863/My-Graphic-Designing-Portfolio"
             },
             {
-                img: "/imgs/project/3.png",
-                title: "project 3",
-                url: "#"
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/5d84cc171535451.64701a5b0053e.jpg",
+                title: "Social Media Post Design",
+                url: "https://www.behance.net/gallery/171535451/Real-Estate-Social-Media-Posts"
             },
-        ]
+            {
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/f1fef1171075719.6468a62d959ae.jpg",
+                title: "Soul Swami Client",
+                url: "https://www.behance.net/gallery/171075719/Project-Soul-swami"
+            },
+            {
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/f2bd65126452763.612df5b67a7b4.jpg",
+                title: "Social Media Post 2",
+                url: "https://www.behance.net/gallery/126452763/SOCIAL-MEDIA-POSTS"
+            },
+            {
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5b6968185443119.656465fb066d6.jpg",
+                title: "New Metro City Lahore Branding",
+                url: "https://www.behance.net/gallery/185443119/Revealing-Something-Big-in-Lahore"
+            },
+            {
+                img: "https://mir-s3-cdn-cf.behance.net/project_modules/1400/c31133170619375.64617dcf7c155.jpg",
+                title: "Gaming Logos",
+                url: "https://www.behance.net/gallery/170619375/Gaming-Concepts-Logos"
+            }
+        ];
 
     testimonialData: {
         date: string;
